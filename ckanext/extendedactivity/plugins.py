@@ -17,6 +17,8 @@ class IActivity(Interface):
     def string_functions(self, string_functions):
         raise NotImplementedError
 
+    def actions_obj_id_validator(self, obj_id_validator):
+        raise NotImplementedError
 
 class ActivityPlugin(p.SingletonPlugin):
     p.implements(p.IConfigurer)
@@ -39,5 +41,10 @@ class ActivityPlugin(p.SingletonPlugin):
 
             try:
                 plugin.string_functions(act.activity_stream_string_functions)
+            except NotImplementedError:
+                pass
+
+            try:
+                plugin.actions_obj_id_validator(validators.object_id_validators)
             except NotImplementedError:
                 pass
