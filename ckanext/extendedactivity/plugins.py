@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
-__all__ = ('IActivity', 'ActivityPlugin')
-
 import ckan.plugins as p
 import ckan.lib.activity_streams as act
 from ckan.plugins.interfaces import Interface
+
+__all__ = ('IActivity', 'ActivityPlugin')
 
 
 class IActivity(Interface):
