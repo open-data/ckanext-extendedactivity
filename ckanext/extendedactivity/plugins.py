@@ -3,6 +3,7 @@
 import ckan.plugins as p
 import ckan.lib.activity_streams as act
 from ckan.plugins.interfaces import Interface
+from ckan.logic import validators
 
 __all__ = ('IActivity', 'ActivityPlugin')
 
